@@ -1,1 +1,2 @@
 # tensorflow_training
+这个仓库使用来训练使用TensorFLow简单的案例和测试git的使用，希望每天都有一些进步吧。
