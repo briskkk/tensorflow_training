@@ -5,8 +5,8 @@ import tensorflow as tf
 import pandas as pd
 from  sklearn.model_selection import train_test_split
 
-dataX = pd.read_csv('D:/Dataset/kdddd/kddcup.data_10_percent/X_1.csv')
-datay = pd.read_csv('D:/Dataset/kdddd/kddcup.data_10_percent/y_1.csv')
+dataX = pd.read_csv('./kddcup.data_10_percent/X_1.csv')
+datay = pd.read_csv('./kddcup.data_10_percent/y_1.csv')
 
 data_X = dataX.astype('float32')
 data_y = datay.astype('float32')
@@ -30,7 +30,7 @@ def main(_):
     sys.exit(-1)
 
 
-print('Trining model...')
+print('Training model...')
 
 sess = tf.InteractiveSession()
 
@@ -81,7 +81,6 @@ print("Exporting trained model to", export_path)
 
 builder = tf.saved_model.builder.SavedModelBuilder(export_path)
 
-
 tensor_info_x = tf.saved_model.utils.build_tensor_info(x)
 tensor_info_y = tf.saved_model.utils.build_tensor_info(y)
 
@@ -102,7 +101,7 @@ builder.add_meta_graph_and_variables(
 
 builder.save()
 
-print('Done exporting!')
+print('Done exporting model for online prediction!')
 
 if __name__ == '__main__':
     tf.app.run()
