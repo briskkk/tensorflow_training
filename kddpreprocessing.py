@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-kdd = pd.read_csv('D:/Dataset/kdddd/kddcup.data_10_percent/kddcup.data_10_percent_corrected.csv',names = [ 'duration'
+kdd = pd.read_csv('/home/briskk/Datasets/kdddd/kddcup.data_10_percent_corrected.csv',names = [ 'duration'
 , 'protocol_type'
 , 'service'
 , 'flag'
@@ -194,5 +194,5 @@ y = pd.DataFrame(onehot(kddconcat['attack_type']),dtype=float)
 X = X.astype('float32')
 y = y.astype('float32')
 
-X.to_csv('D:/Dataset/kdddd/kddcup.data_10_percent/X_1.csv',index=False)
-y.to_csv('D:/Dataset/kdddd/kddcup.data_10_percent/y_1.csv',index=False)
+X.to_csv('/home/briskk/Datasets/kdddd/X_1.csv',index=False)
+y.to_csv('/home/briskk/Datasets/kdddd/y_1.csv',index=False)
