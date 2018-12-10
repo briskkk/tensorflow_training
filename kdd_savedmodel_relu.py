@@ -73,7 +73,7 @@ print('training accuracy %g' % sess.run(
 print('Done training!')
 
 
-export_path_base = sys.argv[-1]
+export_path_base = "/tmp/model"
 export_path = os.path.join(
     tf.compat.as_bytes(export_path_base),
     tf.compat.as_bytes(str(FLAGS.model_version)))
